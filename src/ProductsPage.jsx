@@ -2,11 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ProductsIndex } from "./ProductsIndex";
 import { ProductsNew } from "./ProductsNew";
+import { ProductsShow } from "./ProductsShow";
+import { Modal } from "./Modal";
 
 export function ProductsPage() {
   const [products, setProducts] = useState ([]);
-  
-  
+  const [isProductsShowVisible, setIsProductsShowVisible] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState({});
+
   
   const handleIndex = () => {
     console.log("handleIndex");
@@ -27,6 +30,18 @@ export function ProductsPage() {
     });
   };
 
+  const handleShow = (product) => {
+    console.log(product);
+    setCurrentProduct(product);
+    console.log('handling the show...');
+    setIsProductsShowVisible(true);
+  };
+
+  const closeModal = () => {
+    console.log('close the modal...');
+    setIsProductsShowVisible(false)
+  }
+
   useEffect(handleIndex, [])
 
 
@@ -34,7 +49,10 @@ export function ProductsPage() {
   return (
     <main>
       <ProductsNew onCreate={handleCreate} />
-      <ProductsIndex products={products} />
+      <ProductsIndex products={products} onShow={handleShow} />
+      <Modal show={isProductsShowVisible} onClose={closeModal}>
+        <ProductsShow product={currentProduct}/>
+      </Modal>
     </main>
   );
 }
