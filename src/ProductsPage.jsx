@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ProductsIndex } from "./ProductsIndex";
+import { ProductsNew } from "./ProductsNew";
 
 export function ProductsPage() {
   const [products, setProducts] = useState ([]);
@@ -17,13 +18,23 @@ export function ProductsPage() {
     console.log('after the .then')
   };
 
+  const handleCreate = (params)  => {
+    console.log("handleCreate...");
+    axios.post("http://localhost:3000/products.json", params).then(response => {
+      console.log(response.data)
+
+      setProducts([...products, response.data])
+    });
+  };
+
   useEffect(handleIndex, [])
 
 
 
   return (
     <main>
-    <ProductsIndex products={products} />
+      <ProductsNew onCreate={handleCreate} />
+      <ProductsIndex products={products} />
     </main>
   );
 }

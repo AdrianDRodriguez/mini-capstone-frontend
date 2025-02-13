@@ -19,6 +19,12 @@ console.log(products);
           <div>
             <img src={product.image_url} />
           </div>
+          <div>
+            Maker: {product.maker}
+          </div>
+          <div>
+            Delivery: {product.delivery}
+          </div>
           <button>More Info</button>
         </div>
       ))}
