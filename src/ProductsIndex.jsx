@@ -1,9 +1,10 @@
 export function ProductsIndex( {products} ) {
-console.log(products)
+console.log(products);
 
   return (
     <div id="products-index">
       <h1>All products</h1>
+      <br />
       {products.map((product) => (
         <div key={product.id}>
           <div>
@@ -16,13 +17,7 @@ console.log(products)
             Description: {product.description}
           </div>
           <div>
-            Image_url: {product.image_url}
-          </div>
-          <div>
-            Maker: {product.maker}
-          </div>
-          <div>
-            Delivery: {product.delivery}
+            <img src={product.image_url} />
           </div>
           <button>More Info</button>
         </div>
