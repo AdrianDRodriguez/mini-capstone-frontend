@@ -4,6 +4,9 @@ import { ProductsIndex } from "./ProductsIndex";
 import { ProductsNew } from "./ProductsNew";
 import { ProductsShow } from "./ProductsShow";
 import { Modal } from "./Modal";
+import { SignupPage } from "./SignupPage";
+import { LoginPage } from "./LoginPage";
+import { LogoutLink } from "./LogoutLink";
 
 export function ProductsPage() {
   const [products, setProducts] = useState ([]);
@@ -53,6 +56,9 @@ export function ProductsPage() {
       <Modal show={isProductsShowVisible} onClose={closeModal}>
         <ProductsShow product={currentProduct}/>
       </Modal>
+      <SignupPage />
+      <LoginPage />
+      <LogoutLink />
     </main>
   );
 }
