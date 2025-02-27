@@ -4,8 +4,8 @@ import { ProductsIndex } from "./ProductsIndex";
 import { ProductsNew } from "./ProductsNew";
 import { ProductsShow } from "./ProductsShow";
 import { Modal } from "./Modal";
-import { SignupPage } from "./SignupPage";
-import { LoginPage } from "./LoginPage";
+// import { SignupPage } from "./SignupPage";
+// import { LoginPage } from "./LoginPage";
 import { LogoutLink } from "./LogoutLink";
 
 export function ProductsPage() {
@@ -56,8 +56,8 @@ export function ProductsPage() {
       <Modal show={isProductsShowVisible} onClose={closeModal}>
         <ProductsShow product={currentProduct}/>
       </Modal>
-      <SignupPage />
-      <LoginPage />
+      {/* <SignupPage />
+      <LoginPage /> */}
       <LogoutLink />
     </main>
   );

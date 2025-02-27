@@ -8,7 +8,7 @@ export function ProductsNew() {
     const params = new FormData(event.target)
     axios.post("http://localhost:3000/products.json", params).then(response => {
       console.log(response.data)
-      event.target.reset()
+      window.location.href = '/'
     });
   }
 

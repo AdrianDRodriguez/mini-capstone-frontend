@@ -19,10 +19,10 @@ export function Header() {
             </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Authentication
+                Sign in or Register
               </a>
               <ul className="dropdown-menu">
-              <li><Link className="dropdown-item" to="/login">Login (react)</Link></li>
+              <li><Link className="dropdown-item" to="/login">Login </Link></li>
                 <li><a className="dropdown-item" href="/signup">Sign up</a></li>
                 <li><hr className="dropdown-divider" /></li>                
                 {/* <li><a className="dropdown-item" href="#">Logout</a></li> */}
