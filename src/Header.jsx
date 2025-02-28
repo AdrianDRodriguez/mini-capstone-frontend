@@ -1,7 +1,25 @@
 import { Link } from "react-router-dom";
+import { LogoutLink } from "./LogoutLink";
 
 
 export function Header() {
+  let authenticationLinks;
+
+  if (localStorage.jwt) {
+    authenticationLinks = (
+      <div>
+        <li><LogoutLink className="dropdown-item"/></li>
+      </div>
+    )
+  } else {
+    authenticationLinks = (
+      <div>
+        <li><Link className="dropdown-item" to="/login">Login</Link></li>
+        <li><a className="dropdown-item" href="/signup">Sign up</a></li>
+      </div>
+    )
+  }
+
   return (
 <nav className="navbar navbar-expand-lg bg-background-light bg-dark" data-bs-theme="dark">
       <div className="container-fluid">
@@ -22,10 +40,7 @@ export function Header() {
                 Sign in or Register
               </a>
               <ul className="dropdown-menu">
-              <li><Link className="dropdown-item" to="/login">Login </Link></li>
-                <li><a className="dropdown-item" href="/signup">Sign up</a></li>
-                <li><hr className="dropdown-divider" /></li>                
-                {/* <li><a className="dropdown-item" href="#">Logout</a></li> */}
+              {authenticationLinks}
               </ul>
             </li>
             <li className="nav-item">

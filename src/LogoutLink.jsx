@@ -1,4 +1,6 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 
 export function LogoutLink() {
   const handleClick = (event) => {
@@ -9,8 +11,6 @@ export function LogoutLink() {
   };
 
   return (
-    <a href="#" onClick={handleClick}>
-      Logout
-    </a>
+  <Link className="dropdown-item" href="#" onClick={handleClick}>Logout</Link>  
   );
 }
