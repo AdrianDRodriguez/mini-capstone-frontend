@@ -6,3 +6,30 @@ html {
 .errors {
   color: crimson;
 }
+
+.mb-3 {
+  margin-left: 25em;
+  margin-right: 25em;
+  text-align: center;
+}
+
+div#login {
+  text-align: center;
+}
+
+footer {
+  margin-top: 10em;
+}
+
+h4#footer-h4.card-title {
+  text-align: center;
+  margin-top: 3em;
+}
+
+p#footer-p.card-text {
+  text-align: center;
+}
+
+p#footer-p2.card-text {
+  text-align: center;
+}

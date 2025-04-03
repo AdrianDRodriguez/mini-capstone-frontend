@@ -36,14 +36,17 @@ export function LoginPage() {
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
-        <div>
-          Email: <input name="email" type="email" />
+     <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label className="form-label">Email address</label>
+          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+          <div id="emailHelp" className="form-text">We will never share your email with anyone else.</div>
         </div>
-        <div>
-          Password: <input name="password" type="password" />
+        <div className="mb-3">
+          <label className="form-label">Password</label>
+          <input type="password" className="form-control" id="exampleInputPassword1"/>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>
   );

@@ -19,12 +19,13 @@ export function OrdersIndex() {
       <h1>Your Orders</h1>
       {orders.map(order => (
         <div key={order.id}>
-          <p><b>product_id:</b> {order.id}</p>
-          <p><b>quantity:</b> {order.id}</p>
-          <p><b>subtotal:</b> {order.id}</p>
-          <p><b>tax:</b> {order.id}</p>
-          <p><b>total:</b> {order.id}</p>
-          <p><b>created_at:</b> {order.id}</p>
+          <p><b>product_id:</b> {order.product_id}</p>
+          <p><b>quantity:</b> {order.quantity}</p>
+          <p><b>subtotal:</b> {order.subtotal}</p>
+          <p><b>tax:</b> {order.tax}</p>
+          <p><b>total:</b> {order.total}</p>
+          <p><b>created_at:</b> {order.created_at}</p>
+          <p><b>user_id:</b> {order.user_id}</p>
           <hr />
         </div>
       ))}
